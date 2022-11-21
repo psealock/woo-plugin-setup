@@ -1,0 +1,18 @@
+{
+  "name": "woo-plugin-setup",
+  "version": "1.0.0",
+  "description": "WooCommerce plugin setup",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psealock/woo-plugin-setup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psealock/woo-plugin-setup/issues"
+  },
+  "homepage": "https://github.com/psealock/woo-plugin-setup#readme"
+}

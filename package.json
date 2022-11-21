@@ -1,18 +1,30 @@
 {
-  "name": "woo-plugin-setup",
-  "version": "1.0.0",
-  "description": "WooCommerce plugin setup",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/psealock/woo-plugin-setup.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/psealock/woo-plugin-setup/issues"
-  },
-  "homepage": "https://github.com/psealock/woo-plugin-setup#readme"
+	"name": "woo-plugin-setup",
+	"version": "1.0.0",
+	"description": "WooCommerce plugin setup",
+	"scripts": {
+		"build": "wp-scripts build",
+		"check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"lint:md:docs": "wp-scripts lint-md-docs",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start",
+		"test:e2e": "wp-scripts test-e2e",
+		"test:unit": "wp-scripts test-unit-js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/psealock/woo-plugin-setup.git"
+	},
+	"author": "",
+	"license": "GPL-3.0+",
+	"devDependencies": {
+		"@woocommerce/dependency-extraction-webpack-plugin": "^2.2.0",
+		"@wordpress/scripts": "^24.6.0"
+	}
 }

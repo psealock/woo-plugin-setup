@@ -23,7 +23,7 @@ class Setup {
 	 */
 	public function register_scripts() {
 		if ( ! method_exists( 'Automattic\WooCommerce\Admin\PageController', 'is_admin_or_embed_page' ) ||
-		   ! \Automattic\WooCommerce\Admin\PageController::is_admin_or_embed_page()
+		! \Automattic\WooCommerce\Admin\PageController::is_admin_or_embed_page()
 		) {
 			return;
 		}
@@ -31,11 +31,11 @@ class Setup {
 		$script_path       = '/build/index.js';
 		$script_asset_path = dirname( WOO_PLUGIN_SETUP_PLUGIN_FILE ) . '/build/index.asset.php';
 		$script_asset      = file_exists( $script_asset_path )
-		   ? require $script_asset_path
-		   : array(
-			   'dependencies' => array(),
-			   'version'      => filemtime( $script_path ),
-		   );
+		? require $script_asset_path
+		: array(
+			'dependencies' => array(),
+			'version'      => filemtime( $script_path ),
+		);
 		$script_url        = plugins_url( $script_path, WOO_PLUGIN_SETUP_PLUGIN_FILE );
 
 		wp_register_script(

@@ -57,6 +57,10 @@ class Woo_Plugin_Setup {
 		}
 
 		if ( is_admin() ) {
+			// Load plugin translations.
+			$plugin_rel_path = basename( dirname( __FILE__ ) ) . '/languages'; /* Relative to WP_PLUGIN_DIR */
+			load_plugin_textdomain( 'woo-plugin-setup', false, $plugin_rel_path );
+
 			new Setup();
 		}
 	}

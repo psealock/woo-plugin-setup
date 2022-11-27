@@ -29,4 +29,53 @@ require_once plugin_dir_path( __FILE__ ) . '/vendor/autoload_packages.php';
 
 use WooPluginSetup\Admin\Setup;
 
-new Setup();
+/**
+ * Woo_Plugin_Setup class.
+ */
+class Woo_Plugin_Setup {
+	/**
+	 * This class instance.
+	 *
+	 * @var \Woo_Plugin_Setup single instance of this class.
+	 */
+	private static $instance;
+
+	/**
+	 * Constructor.
+	 */
+	public function __construct() {
+		add_action( 'plugins_loaded', array( $this, 'init' ) );
+	}
+
+	/**
+	 * Init the plugin once WP is loaded.
+	 */
+	public function init() {
+		// If WooCommerce does not exist, deactivate plugin.
+		if ( ! class_exists( 'WooCommerce' ) ) {
+			deactivate_plugins( plugin_basename( __FILE__ ) );
+		}
+
+		if ( is_admin() ) {
+			new Setup();
+		}
+	}
+
+	/**
+	 * Gets the main instance.
+	 *
+	 * Ensures only one instance can be loaded.
+	 *
+	 * @return \Woo_Plugin_Setup
+	 */
+	public static function instance() {
+
+		if ( null === self::$instance ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+}
+
+Woo_Plugin_Setup::instance();

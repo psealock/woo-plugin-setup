@@ -30,6 +30,7 @@
 		"@wordpress/scripts": "^24.6.0"
 	},
 	"dependencies": {
-		"@wordpress/hooks": "^3.22.0"
+		"@wordpress/hooks": "^3.22.0",
+		"@wordpress/i18n": "^4.22.0"
 	}
 }
